@@ -7,6 +7,7 @@ public class App {
 
         lista.addBloco(25, 5);
         //lista.removeBloco(1);
+        lista.addBlocoRecursive(999, 15);
         lista.printList();
 
         //System.out.println(lista.searchBloco(1).getValue());

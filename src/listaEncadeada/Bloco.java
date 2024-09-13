@@ -7,6 +7,8 @@ public class Bloco {
     public Bloco(int value) {
         this.value = value;
     }
+    public Bloco() {
+    }
 
     public int getValue() {
         return value;

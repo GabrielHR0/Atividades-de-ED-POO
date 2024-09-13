@@ -22,6 +22,26 @@ public class Lista {
         return newBloco;
     }
 
+    public void addBlocoRecursive(int value, int position){
+        Bloco aux = searchBloco(position);
+        if (aux == null){
+            addBlocoFinal(0);
+            addBlocoRecursive(value, position);
+        } else {
+            aux.setValue(value);;
+        }
+
+    }
+
+    public void addBlocoFinal(int value){
+        Bloco newBloco = new Bloco(value);
+        Bloco aux = this.inicio;
+        while (aux.getProx() != null) {
+            aux = aux.getProx();
+        }
+        aux.setProx(newBloco);
+    }
+
     public void removeBloco(int position){
         if (position != 1){
             Bloco aux = searchBloco(position - 1);
@@ -36,11 +56,11 @@ public class Lista {
 
     public Bloco searchBloco(int position){
         Bloco aux = this.inicio;
-        if (aux != null) {
             for (int i = 1; i < position; i++) {
-                aux = aux.getProx();
+                if (aux != null) {
+                    aux = aux.getProx();
+                }
             }
-        }
         return aux;
     }
 
